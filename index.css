@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(35, 25%, 97%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(35, 15%, 92%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(24, 94%, 60%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(35, 15%, 92%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(35, 15%, 92%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+
+  /* Indian themed colors */
+  --saffron: hsl(24, 94%, 60%);
+  --deep-green: hsl(108, 84%, 32%);
+  --royal-blue: hsl(217, 91%, 40%);
+  --warm-gold: hsl(45, 93%, 47%);
+  --warm-gray: hsl(35, 25%, 97%);
+  --charcoal: hsl(220, 9%, 26%);
+}
+
+.dark {
+  --background: hsl(220, 13%, 8%);
+  --foreground: hsl(0, 0%, 95%);
+  --muted: hsl(220, 13%, 14%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(220, 13%, 8%);
+  --popover-foreground: hsl(0, 0%, 95%);
+  --card: hsl(220, 13%, 8%);
+  --card-foreground: hsl(0, 0%, 95%);
+  --border: hsl(220, 13%, 14%);
+  --input: hsl(220, 13%, 14%);
+  --primary: hsl(24, 94%, 60%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(220, 13%, 14%);
+  --secondary-foreground: hsl(0, 0%, 95%);
+  --accent: hsl(220, 13%, 14%);
+  --accent-foreground: hsl(0, 0%, 95%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 95%);
+  --ring: hsl(240, 4.9%, 83.9%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+
+  .text-shadow-lg {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  }
+
+  .saffron {
+    color: var(--saffron);
+  }
+  
+  .bg-saffron {
+    background-color: var(--saffron);
+  }
+  
+  .text-deep-green {
+    color: var(--deep-green);
+  }
+  
+  .bg-deep-green {
+    background-color: var(--deep-green);
+  }
+  
+  .text-royal-blue {
+    color: var(--royal-blue);
+  }
+  
+  .bg-royal-blue {
+    background-color: var(--royal-blue);
+  }
+  
+  .text-warm-gold {
+    color: var(--warm-gold);
+  }
+  
+  .bg-warm-gold {
+    background-color: var(--warm-gold);
+  }
+  
+  .text-charcoal {
+    color: var(--charcoal);
+  }
+  
+  .bg-charcoal {
+    background-color: var(--charcoal);
+  }
+
+  .gradient-saffron {
+    background: linear-gradient(135deg, var(--saffron), var(--warm-gold));
+  }
+
+  .gradient-green {
+    background: linear-gradient(135deg, var(--deep-green), hsl(108, 84%, 42%));
+  }
+
+  .india-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 5L25 15H35L27.5 22L30 32H20L10 32L12.5 22L5 15H15L20 5Z' fill='%23FF9933' fill-opacity='0.1'/%3E%3C/svg%3E");
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-orange-500 to-yellow-500 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105;
+  }
+  
+  .card-india {
+    @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow border-l-4;
+  }
+  
+  .card-saffron {
+    @apply card-india border-orange-500;
+  }
+  
+  .card-green {
+    @apply card-india border-green-600;
+  }
+  
+  .card-blue {
+    @apply card-india border-blue-600;
+  }
+  
+  .card-gold {
+    @apply card-india border-yellow-500;
+  }
+}
